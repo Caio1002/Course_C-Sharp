@@ -38,7 +38,6 @@ namespace PrimProj
             */
 
             Retangulo ret = new Retangulo();
-            double ar = 0;
 
             Console.Write("Entre com a largura: ");
             ret.Largura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
