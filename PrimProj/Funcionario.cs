@@ -46,7 +46,7 @@ namespace PrimProj
             return
             "Funcionário: "
             + Nome
-            + ", " 
+            + ", "
             + "Salario: R$"
             + SalarioLiquido().ToString("F2", CultureInfo.InvariantCulture);
         }
