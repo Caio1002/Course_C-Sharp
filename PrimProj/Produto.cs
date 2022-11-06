@@ -9,10 +9,8 @@ namespace PrimProj
 {
     class Produto
     {
-
         /*
-            MAIN
-            Produto p = new Produto();
+         Produto p = new Produto();
 
             Console.WriteLine("Entre com os dados do produto:");
             Console.Write("Nome: ");
@@ -39,11 +37,17 @@ namespace PrimProj
 
             Console.WriteLine();
             Console.WriteLine("Dados atualizados: " + p);
-            */
-
+        */
         public string Nome;
         public double Preco;
         public int Quantidade;
+
+        public Produto(string nome, double preco, int quantidade)
+        {
+            Nome = nome;
+            Preco = preco;
+            Quantidade = quantidade;
+        }
 
         public double ValorTotalEmEstoque()
         {
