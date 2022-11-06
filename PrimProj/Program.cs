@@ -14,10 +14,20 @@ namespace PrimProj
             Console.Write("Preço: ");
             double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             
-            /*Console.Write("Quantidade em estoque: ");
+
+            /*TESTE PARA CONSTRUTOR COM 2 ARGUMENTOS
+            Console.Write("Quantidade em estoque: ");
             int quantidade = int.Parse(Console.ReadLine());*/
 
             Produto p = new Produto(nome, preco);
+
+            /*SINTAXE ALTERNATIVA*/
+            Produto p3 = new Produto
+            {
+                Nome = "TV",
+                Preco = 200.99,
+                Quantidade = 20
+            };
 
             Console.WriteLine("Dados do produto: " + p);
             Console.WriteLine();
