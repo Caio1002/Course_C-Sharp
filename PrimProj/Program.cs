@@ -8,8 +8,11 @@ namespace PrimProj
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Hello world!!! Voltando após a conclusão de semestre da faculdade!");
+            Produto p = new Produto("TV", 500.00, 10);
 
+            p.Nome = "TV 4k";
+            Console.WriteLine(p.Nome);
+            Console.WriteLine(p.Preco);
 
         }
     }
