@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimProj
-{
-    internal class ConversorDeMoeda
-    {
+namespace PrimProj {
+    internal class ConversorDeMoeda {
 
         /*MAIN
             Console.WriteLine("Qual a cotação do dólar?");
@@ -22,8 +20,7 @@ namespace PrimProj
 
         public static double Iof = 6.0;
 
-        public static double DolarParaReal(double quantia, double cotacao)
-        {
+        public static double DolarParaReal(double quantia, double cotacao) {
             double total = quantia * cotacao;
             return total + total * Iof / 100;
         }

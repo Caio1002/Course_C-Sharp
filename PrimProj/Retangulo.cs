@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace PrimProj
-{
+namespace PrimProj {
 
     /*
      MAIN
@@ -23,24 +22,20 @@ namespace PrimProj
     Console.WriteLine("Perimetro: " + ret.Perim().ToString("F2", CultureInfo.InvariantCulture));
     Console.WriteLine("Diagonal: " + ret.Diag().ToString("F2", CultureInfo.InvariantCulture));
     */
-    internal class Retangulo
-    {
+    internal class Retangulo {
 
         public double Largura;
         public double Altura;
 
-        public double Area()
-        {
+        public double Area() {
             return Largura * Altura;
         }
 
-        public double Perim()
-        {
+        public double Perim() {
             return 2 * (Largura + Altura);
         }
 
-        public double Diag()
-        {
+        public double Diag() {
             return Math.Sqrt((Altura * Altura) + (Largura * Largura));
         }
 

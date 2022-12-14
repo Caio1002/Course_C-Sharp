@@ -1,9 +1,7 @@
 ﻿using System.Globalization;
 
-namespace PrimProj
-{
-    internal class Funcionario
-    {
+namespace PrimProj {
+    internal class Funcionario {
         /*
          MAIN
             Funcionario func = new Funcionario();
@@ -31,18 +29,15 @@ namespace PrimProj
         public double Salario;
         public double Imposto;
 
-        public double SalarioLiquido()
-        {
+        public double SalarioLiquido() {
             return Salario - Imposto;
         }
 
-        public void AumentaSalario(double porcentagem)
-        {
+        public void AumentaSalario(double porcentagem) {
             Salario = Salario + (Salario * (porcentagem / 100));
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return
             "Funcionário: "
             + Nome

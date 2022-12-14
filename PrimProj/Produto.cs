@@ -5,10 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace PrimProj
-{
-    class Produto
-    {
+namespace PrimProj {
+    class Produto {
         /*
          Produto p = new Produto();
 
@@ -38,6 +36,14 @@ namespace PrimProj
             Console.WriteLine();
             Console.WriteLine("Dados atualizados: " + p);
         */
+
+        /*
+            Produto p = new Produto("TV", 500.00, 10);
+
+            p.Nome = "TV 4k";
+            Console.WriteLine(p.Nome);
+            Console.WriteLine(p.Preco); 
+        */
         private string _nome;
         public double Preco { get; private set; }
         public int Quantidade { get; private set; }
@@ -48,50 +54,41 @@ namespace PrimProj
         */
 
         /*Properties*/
-        public string Nome
-        {
+        public string Nome {
             get { return _nome; }
-            set
-            {
-                if (value != null && value.Length > 1)
-                {
+            set {
+                if (value != null && value.Length > 1) {
                     _nome = value;
                 }
             }
         }
 
-        public Produto(string nome, double preco, int quantidade)
-        {
+        public Produto(string nome, double preco, int quantidade) {
             _nome = nome;
             Preco = preco;
             Quantidade = quantidade;
         }
 
         /*SOBRECARGA*/
-        public Produto(string nome, double preco)
-        {
+        public Produto(string nome, double preco) {
             _nome = nome;
             Preco = preco;
             Quantidade = 0;/*Já inicia com 0, portanto não é necessaria essa linha*/
         }
 
-        public double ValorTotalEmEstoque()
-        {
+        public double ValorTotalEmEstoque() {
             return Preco * Quantidade;
         }
 
-        public void AdicionarProdutos(int quantidade)
-        {
+        public void AdicionarProdutos(int quantidade) {
             Quantidade += quantidade;
         }
 
-        public void RemoverProdutos(int quantidade)
-        {
+        public void RemoverProdutos(int quantidade) {
             Quantidade -= quantidade;
         }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return
                 _nome
                 + ", $ "

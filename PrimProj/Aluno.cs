@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrimProj
-{
-    internal class Aluno
-    {
+namespace PrimProj {
+    internal class Aluno {
 
         /*
         MAIN
@@ -39,29 +37,20 @@ namespace PrimProj
         public string Nome;
         public double Nota1, Nota2, Nota3;
 
-        public double NotaFinal()
-        {
+        public double NotaFinal() {
             return (Nota1 + Nota2 + Nota3);
         }
-        public bool Aprovado()
-        {
-            if (NotaFinal() >= 60.0)
-            {
+        public bool Aprovado() {
+            if (NotaFinal() >= 60.0) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
-        public double NotaRestante()
-        {
-            if (Aprovado())
-            {
+        public double NotaRestante() {
+            if (Aprovado()) {
                 return 0.0;
-            }
-            else
-            {
+            } else {
                 return 60.0 - NotaFinal();
             }
         }
