@@ -14,6 +14,14 @@ namespace PrimProj {
             for(int i = 0; i < numero; i++) {
                 vect[i] = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             }
+            double soma = 0;
+            for(int i = 0; i < numero; i++) {
+                soma += vect[i];
+            }
+            double media = soma / numero;
+
+            Console.WriteLine();
+            Console.WriteLine("A média de altura é: " + media.ToString("F2", CultureInfo.InvariantCulture));
 
         }
     }
