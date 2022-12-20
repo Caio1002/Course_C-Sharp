@@ -5,27 +5,33 @@ namespace PrimProj {
     class Program {
         static void Main(string[] args) {
 
-            Console.Write("Digite a quantidade de produtos: ");
-            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Quantos quartos serão alugados?");
+            int quant = int.Parse(Console.ReadLine());
+            Console.WriteLine();
 
-            Product[] vect = new Product[n];
+            Quarto[] quarto = new Quarto[10];
 
-            for (int i = 0; i < n; i++) {
-                Console.WriteLine("Nome do produto:");
-                string name = Console.ReadLine();
-                Console.WriteLine("Valor do produto:");
-                double price = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            for (int i = 0; i < quant; i++) {
+                Console.WriteLine($"Aluguel #{i+1}:");
                 Console.WriteLine();
-                vect[i] = new Product { Name = name, Price = price };
+                Console.Write("Nome do titular: ");
+                string name = Console.ReadLine();
+                Console.Write("Email do titular: ");
+                string mail = Console.ReadLine();
+                Console.Write("Numero do quarto: ");
+                int num = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                quarto[num] = new Quarto { Nome = name, Email = mail };
             }
 
-            double soma = 0.0;
-            for(int i = 0; i < n; i++) {
-                soma += vect[i].Price;
-            }
-            double media = soma / n;
-            Console.WriteLine("Preço médio = " + media.ToString("F2", CultureInfo.InvariantCulture));
+            Console.WriteLine();
+            Console.WriteLine("Quartos ocupados:");
+            for (int i = 0; i < 10; i++) {
+                if (quarto[i] != null) {
+                    Console.WriteLine(i + ": " + quarto[i]);
 
+                }
+            }
         }
     }
 }
