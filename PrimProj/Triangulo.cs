@@ -38,7 +38,13 @@ namespace PrimProj {
             {
                 Console.WriteLine("Maior área: Y");
             } 
-    */
+
+            FOREACH
+            string[] vect = new string[] { "Maria", "Pedro", "Ana" };
+            foreach(string obj in vect) {
+                Console.WriteLine(obj);
+            }
+*/
     class Triangulo {
 
         public double A;
