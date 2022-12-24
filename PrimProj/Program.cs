@@ -1,45 +1,72 @@
 ﻿using System;
 using System.Globalization;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PrimProj {
     class Program {
-        static void Main(string[] args) {
+            static void Main(string[] args) {
 
-            ContaBancaria conta;
+                List<string> list = new List<string>();
 
-            Console.Write("Entre com o número da conta: ");
-            int numero = int.Parse(Console.ReadLine());
+                list.Add("Maria");
+                list.Add("Alex");
+                list.Add("Bob");
+                list.Add("Ana");
+                list.Add("Carlos");
+                list.Add("João");
+                list.Insert(2, "Marco");
 
-            Console.Write("Entre com o titular da conta: ");
-            string titular = Console.ReadLine();
+                foreach (string obj in list) {
+                    Console.WriteLine(obj);
+                }
+                Console.WriteLine("Contador da lista: " + list.Count);
 
-            Console.Write("Haverá depósito inicial (s/n)? ");
-            char resp = char.Parse(Console.ReadLine());
-            if (resp == 's' || resp == 'S') {
-                Console.WriteLine("Entre com o valor do depósito inicial: ");
-                double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                conta = new ContaBancaria(numero, titular, depositoInicial);
-            } else {
-                conta = new ContaBancaria(numero, titular);
-            }
+                string s1 = list.Find(x => x[0] == 'A');/*função lambda*/
+                Console.WriteLine("Primeira letra 'A': " + s1);
 
-            Console.WriteLine();
-            Console.WriteLine("Dados da conta: ");
-            Console.WriteLine(conta);
+                string s2 = list.FindLast(x => x[0] == 'A');/*função lambda*/
+                Console.WriteLine("Ultima letra 'A': " + s1);
 
-            Console.WriteLine();
-            Console.Write("Entre com valor para depósito: ");
-            double quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            conta.Deposito(quantia);
-            Console.WriteLine("Dados da conta atualizados:");
-            Console.WriteLine(conta);
+                int pos1 = list.FindIndex(x => x[0] == 'A');
+                Console.WriteLine("Primeira posição que começa com 'A': " + s1);
 
-            Console.WriteLine();
-            Console.Write("Entre com valor para saque: ");
-            quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            conta.Saque(quantia);
-            Console.WriteLine("Dados da conta atualizados:");
-            Console.WriteLine(conta);
+                int pos2 = list.FindLastIndex(x => x[0] == 'A');
+                Console.WriteLine("Ultima posição que começa com 'A': " + s1);
+
+                List<string> list2 = list.FindAll(x => x.Length == 5);
+                Console.WriteLine("------------");
+                foreach(string obj in list2) {
+                    Console.WriteLine(obj);
+                }
+
+                list.RemoveRange(2, 2);
+                Console.WriteLine();
+                Console.WriteLine("removeRange------------");
+                foreach (string obj in list) {
+                    Console.WriteLine(obj);
+                }
+
+                list.Remove("Alex");
+                Console.WriteLine();
+                Console.WriteLine("remove------------");
+                foreach (string obj in list) {
+                    Console.WriteLine(obj);
+                }
+
+                list.RemoveAt(2);
+                Console.WriteLine();
+                Console.WriteLine("removeAT------------");
+                foreach (string obj in list) {
+                    Console.WriteLine(obj);
+                }
+
+                list.RemoveAll(x => x[0] == 'M');
+                Console.WriteLine();
+                Console.WriteLine("removeall------------");
+                foreach (string obj in list) {
+                    Console.WriteLine(obj);
+                }
 
         }
     }
