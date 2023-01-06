@@ -2,53 +2,33 @@
 using System.Globalization;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using System.Data;
 
 namespace PrimProj {
     class Program {
         static void Main(string[] args) {
 
-            string original = "abcde FGHIJ ABC abc DEFG  ";
-            Console.WriteLine("Original: " + original + " - ");
+            DateTime d1 = DateTime.Now;//marcar hora atual
+            Console.WriteLine(d1);
+            Console.WriteLine(d1.Ticks);//marcar hora em ticks desde 01 Jan
 
-            string s1 = original.ToUpper();
-            Console.WriteLine("Maiuscula: " + s1 + " - ");
+            DateTime d2 = new DateTime(2019, 10, 14, 11, 02, 55);
+            Console.WriteLine(d2);
 
-            string s2 = original.ToLower();
-            Console.WriteLine("Minuscula: " + s2 + " - ");
+            DateTime d3 = new DateTime(2019, 10, 14, 11, 02, 55, 500);
+            Console.WriteLine(d3);
 
-            //apagar espaços em branco
-            string s3 = original.Trim();
-            Console.WriteLine("Sem espaço: " + s3 + "- ");
+            DateTime d4 = DateTime.Today;
+            Console.WriteLine(d4);
 
-            //procura string
-            int n1 = original.IndexOf("bc");
-            Console.WriteLine("bc encontrado " + n1 + " vezes.");
+            DateTime d5 = DateTime.Parse("15/08/2020");//br
+            Console.WriteLine(d5);
 
-            int n2 = original.LastIndexOf("bc");
-            Console.WriteLine("Localização do ultimo registro 'bc' na string: " + n2);
+            DateTime d6 = DateTime.Parse("2000-07-10 13:01:57");
+            Console.WriteLine(d6);
 
-            //cortar string
-            string s4 = original.Substring(3);
-            Console.WriteLine("Substring: " + s4);
-
-            //cortar string
-            string s5 = original.Substring(3, 5);
-            Console.WriteLine("Substring inicio e fim: " + s5);
-
-            //substituir string
-            string n6 = original.Replace('a', 'x');
-            Console.WriteLine("Substituição: " + n6);
-
-            string n7 = original.Replace("abc", "xy");
-            Console.WriteLine("Substituição: " + n7);
-
-            //testar string vazia
-            bool b1 = String.IsNullOrEmpty(original);
-            Console.WriteLine("Nulo? " + b1);
-
-            //testar espaço em branco
-            bool b2 = String.IsNullOrWhiteSpace(original);
-            Console.WriteLine("Testar espaço em branco: " + b2);
+            DateTime d7 = DateTime.ParseExact("2002-09-19", "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            Console.WriteLine(d7);
 
         }
     }
