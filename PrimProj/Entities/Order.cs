@@ -10,6 +10,24 @@ namespace PrimProj.Entities
     internal class Order
     {
 
+        /*MAIN
+            Order order = new Order
+            {
+                Id = 1080,
+                Moment = DateTime.Now,
+                Status = OrderStatus.PendingPayment
+            };
+
+            Console.WriteLine(order);
+
+            String  txt = OrderStatus.PendingPayment.ToString();
+
+            OrderStatus os = Enum.Parse<OrderStatus>("Delivered");
+
+            Console.WriteLine(txt);
+            Console.WriteLine(os);
+            */
+
         public int Id { get; set; }
         public DateTime Moment { get; set; }
         public OrderStatus Status { get; set; }
