@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimProj.Entities
 {
-    internal class SavingsAccount: Account
+    class SavingsAccount: Account
     {
 
         public double InterestRate { get; set; }
@@ -27,7 +27,8 @@ namespace PrimProj.Entities
             Balance += Balance * InterestRate;
         }
 
-        public override void Withdraw(double amount)
+        //sealed impede a classe/metodo de ser herdada
+        public sealed override void Withdraw(double amount)
         {
             //Sintaxe alternativa
             /*base.Withdraw(amount);
