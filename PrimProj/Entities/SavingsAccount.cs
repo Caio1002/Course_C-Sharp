@@ -27,6 +27,14 @@ namespace PrimProj.Entities
             Balance += Balance * InterestRate;
         }
 
+        public override void Withdraw(double amount)
+        {
+            //Sintaxe alternativa
+            /*base.Withdraw(amount);
+            Balance -= 2.0;*/
+            Balance -= amount;
+        }
+
     }
 
 }
