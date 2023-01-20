@@ -12,14 +12,40 @@ namespace PrimProj
     {
         static void Main(string[] args)
         {
-            Account acc1 = new Account(1001, "Alex", 500.0);
-            Account acc2 = new SavingsAccount(1002, "Ana", 500.0, 0.01);
+            List<Employee> list = new List<Employee>();
 
-            acc1.Withdraw(10.0);
-            acc2.Withdraw(10.0);
+            Console.Write("Enter the number of employees: ");
+            int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(acc1.Balance);
-            Console.WriteLine(acc2.Balance);
+            for(int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Employee #{i} data: ");//interpolação
+                Console.Write("OutSourcered: ");
+                char ch = char.Parse(Console.ReadLine());
+                Console.Write("Name: ");
+                string name = Console.ReadLine();
+                Console.Write("Hours: ");
+                int hours = int.Parse(Console.ReadLine());
+                Console.Write("Value per hour: ");
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                if(ch == 'y')
+                {
+                    Console.Write("Additional charge: ");
+                    double additionalCharge = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                    list.Add(new OutSourcedEmployee(name, hours, valuePerHour, additionalCharge));
+                } else
+                {
+                    list.Add(new Employee(name, hours, valuePerHour));
+                }
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Payments: ");
+            foreach (Employee emp in list)
+            {
+                Console.WriteLine(emp.Name + " - $ " + emp.payment().ToString("F2", CultureInfo.InvariantCulture));
+            }
 
         }
     }
