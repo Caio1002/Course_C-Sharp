@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimProj.Entities
 {
-    class Account
+    abstract class Account
     {
         /*
            MAIN
