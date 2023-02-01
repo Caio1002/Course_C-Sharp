@@ -12,38 +12,16 @@ namespace PrimProj
     {
         static void Main(string[] args)
         {
-            List<Shape> list = new List<Shape>();
-
-            Console.Write("Entet the number of shapes: ");
-            int n = int.Parse(Console.ReadLine());
-
-            for(int i = 0; i < n; i++)
+            try
             {
-                Console.WriteLine($"Shape #{i} data: ");
-                Console.Write("Rectangle or Circle (r/c):");
-                char ch = char.Parse(Console.ReadLine());
-                Console.Write("Color (Black/Blue/Red): ");
-                Color color = Enum.Parse<Color>(Console.ReadLine());
-                if(ch == 'r')
-                {
-                    Console.Write("Width: ");
-                    double width = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    Console.Write("Height: ");
-                    double height = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new Rectangle(width, height, color));
-                } else
-                {
-                    Console.Write("Radius: ");
-                    double radius = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-                    list.Add(new Circle(radius, color));
-                }
-            }
-            Console.WriteLine();
+                int n1 = int.Parse(Console.ReadLine());
+                int n2 = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Shape Areas: ");
-            foreach (Shape shape in list)
+                int result = n1 / n2;
+                Console.WriteLine(result);
+            } catch(DivideByZeroException)
             {
-                Console.WriteLine(shape.Area().ToString("F2", CultureInfo.InvariantCulture));
+                Console.WriteLine("Division by zero is not allowed");
             }
 
         }
